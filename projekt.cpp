@@ -16,32 +16,32 @@ unsigned long long factorial(int n) {
 }
 
 int main() {
-    int a, b;
-    cout << "Podaj dwie liczby calkowite: ";
-    cin >> a >> b;
-
     int wyjscie;
+
     do {
         cout << endl;
         cout << "MENU" << endl;
-        cout << "Podaj numer czynnosci, ktora chcesz wykonac" << endl;
-        cout << "0. Wyjscie" << endl;
+        cout << "Wybierz czynność, którą chcesz wykonać:" << endl;
+        cout << "1. Oblicz silnię z podanej liczby" << endl;
+        cout << "0. Wyjście" << endl;
+        cout << "Twoj wybor: ";
         cin >> wyjscie;
 
         switch (wyjscie) {
-            case 1:
-                cout << "Silnia z " << a << " wynosi: " << factorial(a) << endl;
+            case 1: {
+                int liczba;
+                cout << "Podaj liczbe calkowita: ";
+                cin >> liczba;
+                cout << "Silnia z " << liczba << " wynosi: " << factorial(liczba) << endl;
                 break;
-            case 2:
-                cout << "Silnia z " << b << " wynosi: " << factorial(b) << endl;
-                break;
+            }
             case 0:
                 cout << "Koniec programu." << endl;
                 break;
             default:
                 cout << "Nieprawidlowy wybor. Sprobuj ponownie." << endl;
         }
-    } while(wyjscie != 0);
+    } while (wyjscie != 0);
 
     return 0;
 }
